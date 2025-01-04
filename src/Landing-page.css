@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+body {
+    background: #37343b;
+    background: #59555f;
+    background: #c99007;
+    font-family: Oxygen;
+}
+
+.LandingPage {
+background: pink;
+background: white;
+}
+
+
+.my-main-logo {
+    background: #c99007;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    padding-top: 5px;
+}

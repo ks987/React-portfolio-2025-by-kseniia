@@ -1,0 +1,15 @@
+.contact-info span {
+    color: tomato;
+    font-weight: bold;
+}
+
+.about-me-note {
+    width: 80%;
+   margin: 0 auto;
+}
+
+.list-of-projects li {
+    font-size: 20px;
+}
+
+

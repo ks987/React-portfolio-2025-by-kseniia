@@ -1,0 +1,25 @@
+.navbar-portfolio {
+    background: greenyellow;
+    background: #090a07;
+    background: #383120;
+
+    padding-top: 22px;
+    padding-bottom: 30px;
+}
+
+
+nav .navbar-link {
+text-decoration: none;
+color: black;
+font-weight: bold;
+background: #c6b997;
+border: 2px solid white;
+margin: 5px;
+padding: 10px;
+}
+
+nav .navbar-link:hover { 
+    background: #fdcc03;
+    border: 2px solid #383120;
+    transition: border 0.9s;
+}
