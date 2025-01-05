@@ -1,0 +1,13 @@
+.months-list {
+    font-size: 20px;
+    font-weight: bold;
+    color: tomato;
+}
+
+
+.year-long {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+

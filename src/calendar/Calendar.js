@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
-import './Calendar.css';
+import SampleCalendar from './SampleCalendar';
+import './SampleCalendar.css';
 
 
 
@@ -12,7 +13,7 @@ class Calendar extends Component {
         return(
             <div>
                 <div>
-                    <draftCalendar/>
+                    <SampleCalendar/>
                 </div>
             </div>
         )
