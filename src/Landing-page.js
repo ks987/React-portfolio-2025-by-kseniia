@@ -12,6 +12,14 @@ class LandingPage extends Component {
                 <div className="my-main-logo">React Portfolio 2025 by Kseniia Bondarenko</div>
                 <Navbar/>
 
+
+
+
+                {/* <div className="important-note">
+                    Click on tabs at the top of the page to view portoflio
+                </div> */}
+
+
                 <Footer/>
             </div>
         )
