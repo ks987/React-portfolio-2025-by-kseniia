@@ -8,6 +8,5 @@
 .year-long {
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
+    width: 800px;
 }
-

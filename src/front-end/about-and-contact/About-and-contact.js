@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import './About-and-contact.css';
+import Footer from '../Footer.js';
 
 class AboutAndContact extends Component {
-
-
 
     render() {
         return (
@@ -41,6 +40,8 @@ class AboutAndContact extends Component {
                     </div>
 
                 </div>
+
+                <Footer/>
             </div>
         )
     }

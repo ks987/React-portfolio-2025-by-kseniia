@@ -1,23 +1,19 @@
 import React, { Component} from "react";
 
+import Footer from '../Footer.js';
 
 
 
-
-class ToDoApp extends Component {
-
-
-    render() {
+export default function ToDoApp(){
 
 
         return(
             <div>
 
                 <div>something along the lines of a to do application</div>
+
+                <Footer/>
             </div>
         )
-    }
-}
+    };
 
-
-export default ToDoApp;

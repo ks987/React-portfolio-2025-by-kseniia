@@ -1,12 +1,11 @@
 
+import Navbar from './front-end/Navbar.js';
 import './App.css';
-import LandingPage from './Landing-page';
-
 
 function App() {
   return (
     <div className="App">
-     <LandingPage/>
+    <Navbar/>
     </div>
   );
 }

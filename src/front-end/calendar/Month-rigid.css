@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 170px;
-    height: 170px;
+    height: 220px;
     border: 2px solid pink;
 }
 
@@ -16,4 +16,11 @@
     background: white;
     border: 0.5px solid gray;
     margin: 2px;
+}
+
+.MonthRigid .rigid-month-for-year button:hover {
+    background: gold;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 1s background ease-in-out;
 }

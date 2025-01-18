@@ -1,0 +1,47 @@
+.one-task-field {
+    border: 1px solid gray;
+    padding: 0px;
+    color: tomato;
+    color: #bbb;
+    color: #aaa;
+    background: whitesmoke;
+    background: bisque;
+    background: white;
+    color: #222;
+    text-align: left;
+    width: 400px;
+    height: 25px;
+    font-size: 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;   
+    padding-left: 15px;
+}
+
+.one-task-field:hover {
+    background: whitesmoke;
+    background: snow;
+    background: white;
+    background: #eee;
+    background: white;
+    color: #aaa;
+    color: #222;
+    cursor: pointer;
+    border: 2px solid #ccccff;
+    border: 2px solid #999;
+    padding-left: 15px;
+    font-weight: bold;
+
+}
+
+.OneTask {
+    border: 2px solid gray;
+    border: none;
+    width: 80%;
+    background: greenyellow;
+}
+
+.OneTask:hover {
+    background: yellowgreen;
+    cursor: pointer;
+}

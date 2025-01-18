@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+:root {
+
+    --bright-purple: #b852fc;
+    --purple: #b191ff;
+    --light-purple: #e8dfff;
+    --sand: #ffc65e;
+
+    --whitesmoke: #f5f5f5;
+    --white: #fff;
+    --black: #222;
+    --medium-gray: #bbb;
+    --light-gray: #eee;
+
+}
+
+
+
+.OneDay {
+    background: var(--white);
+    color: var(--black);
+}
+
+
+
+/* buttons styles */
+.toolbar-calendar {
+    border: 2px solid var(--white);
+    display: flex;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.calendar-color-btn {
+    padding: 5px;
+    color: #222;
+    background: var(--white);
+    background: none;
+    border: none;
+    margin: 5px;
+    border: 1px solid var(--medium-gray);
+    border: none;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+
+.color-btn-text {
+    display: none;
+    color: transparent;
+    width: 50px;
+    font-size: 12px;
+}
+
+.calendar-color-btn:hover .color-btn-text {
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--black);
+    background: none;
+}
+
+.calendar-color-btn:hover {
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+}
+
+
+
+/* timestamp on schedule*/
+
+.time-stamp-on-schedule {
+    color: var(--black);
+}
+
+ul li {
+    list-style: none;
+}
+
+
+.schedule-container {
+    margin-top: 50px;
+}
+
+.schedule-slot {
+    border: 0.125px solid var(--medium-gray);
+    border: none;
+    width: 90%;
+    height: 60px;
+    margin: 3px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    margin: 3px auto;
+   
+
+}
+
+.time-stamp-on-schedule {
+
+    border: none;
+    width: 50px;
+}
+
+
+/* Planner styles */
+
+
+.Planner-input-field {
+    height: 20px;
+    width: 200px;
+    border: 2px solid var(--medium-gray);
+}
+
+.Planner-input-field:focus {
+outline: none;
+}
+
+.Planner-add-btn {
+    border: none;
+    padding: 5px 20px;
+    color: var(--white);
+    background: var(--medium-gray);
+    margin: 10px;
+    border-radius: 7px;
+}
+
+.Planner-add-btn:hover {
+    cursor: pointer;
+    transform: scale(0.97);
+
+}
+
+.timeslots {
+border: 2px solid var(--medium-gray);
+height: 500px;
+width: 400px;
+margin: 10px auto;
+}
+
+
+.timeslot {
+background: var(--light-purple);
+width: 150px;
+height: 50px;
+margin: 3px;
+}
+
+
+.timeslot:hover {
+    background: var(--sand);
+    cursor: pointer;
+}
+
+
+.Planner-time {
+    border: none;
+    width: 80px;
+    height: 50px;
+    background: var(--light-gray);
+}
+
+.timeslots-row {
+    display: flex;
+    width: 100%;
+    border: 2px solid var(--light-gray);
+    margin-top: 3px;
+}
