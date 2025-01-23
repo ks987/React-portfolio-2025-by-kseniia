@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import OneDay from './OneDay';
-import './Calendar.css';
+import OneDay from './OneDay.js';
+import './draft-Calendar.css';
 
 class Calendar extends Component {
 

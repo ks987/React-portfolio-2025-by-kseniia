@@ -4,6 +4,7 @@ import {Routes, Route, Link} from 'react-router-dom';
 
 
 import './SampleCalendar.css';
+import './Calendar-navbar-styles.css';
 
 
 
@@ -51,7 +52,7 @@ class SampleCalendar extends Component {
 
 
 
-                <div>this is the year YEAR YEAR view</div>
+               
 
 
            

@@ -27,3 +27,19 @@
 .OneTask:hover {
     cursor: pointer;
 }
+
+
+.sample-task {
+    width: 320px;
+    height: 30px;
+    background: var(--sand);
+    background: var(--purple);
+    border: none;
+    border-bottom: none;
+}
+
+.sample-task:hover {
+    cursor: pointer;
+    
+}
+

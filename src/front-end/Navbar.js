@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {Routes, Route, Link} from 'react-router-dom';
 
 // Links to apps
@@ -17,24 +17,20 @@ import ToDoApp from './to-do-app/To-do-app';
 import OneDay from './calendar/OneDay';
 import FourDays from './calendar/FourDays';
 
-import SampleWeek from './calendar/SampleWeek';
-import SampleMonth from './calendar/SampleMonth';
+import OneWeek from './calendar/OneWeek';
+import OneMonth from './calendar/OneMonth';
 
-import SampleYear from './calendar/SampleYear';
+import OneYear from './calendar/OneYear';
 
 
 
 
 import './Navbar.css';
 
-class Navbar extends Component {
+export default function Navbar() {
 
 
-    ifMobile(){
-        
-    }
-
-    render() {
+   
         return(
             <div>
         <div className="portfolio-title">React portfolio by Kseniia Bondarenko</div>
@@ -62,17 +58,12 @@ class Navbar extends Component {
              
                     <Route exact path='/go-to-day' element={<OneDay/>}></Route>
                     <Route exact path='/go-to-four-days' element={<FourDays/>}></Route>
-                    <Route exact path='/go-to-week' element={<SampleWeek/>}></Route>
-                    <Route exact path='/go-to-month' element={<SampleMonth/>}></Route>
-                    <Route exact path='/go-to-year' element={<SampleYear/>}></Route>
+                    <Route exact path='/go-to-week' element={<OneWeek/>}></Route>
+                    <Route exact path='/go-to-month' element={<OneMonth/>}></Route>
+                    <Route exact path='/go-to-year' element={<OneYear/>}></Route>
       
                 </Routes>
 
             </div>
         )
-    }
-}
-
-
-
-export default Navbar;
+    };

@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+
+
+
 import './Month-rigid.css';
+
 
 class MonthRigid extends Component {
 

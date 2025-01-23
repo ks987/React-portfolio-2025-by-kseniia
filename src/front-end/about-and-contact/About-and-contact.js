@@ -17,7 +17,7 @@ class AboutAndContact extends Component {
                         <h3>Name: Kseniia Bondarenko</h3>
                         <h3>Gmail: something new</h3>
                         <h3>Gmail: something new</h3>
-                        <h3>GitHub: @ks987 Link: <span>insert the link</span></h3>
+                        <h3>GitHub: @ks987 Link: https://github.com/ks987</h3>
                         <div>
                             <h4 className="about-me-note">My name is Kseniia Bondarenko, and I have been studying web development for over two years as of 2025.
 

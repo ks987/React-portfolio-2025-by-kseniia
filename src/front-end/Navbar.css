@@ -56,6 +56,12 @@ body {
     margin-bottom: -20px;
 }
 
+.portfolio-title span {
+    color: var(--bright-purple);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 
 .navbar-portfolio {
     background: var(--whitesmoke);

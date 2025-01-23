@@ -16,14 +16,4 @@
 }
 
 
-.OneTask {
-    border: 2px solid gray;
-    border: none;
-    width: 80%;
-    background: var(--purple);
-    margin: 0px 3px;
-}
 
-.OneTask:hover {
-    cursor: pointer;
-}

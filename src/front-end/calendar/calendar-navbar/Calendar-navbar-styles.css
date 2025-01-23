@@ -37,13 +37,15 @@
     border: none;
     margin: 5px;
     border: 1px solid var(--medium-gray);
+    border: 1px solid var(--purple);
     text-decoration: none;
 }
 
 .calendar-link:hover {
     cursor: pointer;
     background: var(--light-gray);
-    font-weight: bold;
+    background: var(--purple);
+    color: white;
 }
 
 
@@ -52,5 +54,8 @@
 
 
 
+.link-highlighted {
+    border: 2px solid var(--sand);
+}
 
 

@@ -15,12 +15,41 @@
 
 }
 
+.link-highlighted {
+    border: 2px solid var(--sand);
+}
 
 
 .OneDay {
     background: var(--white);
     color: var(--black);
 }
+
+
+.OneDay-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.OneDay-top-row button {
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    width: 100px;
+    height: 30px;
+    margin:  0px 10px;
+    color: var(--bright-purple);
+}
+
+.OneDay-top-row button:hover {
+    transform: scale(0.97);
+    cursor: pointer;
+    
+}
+
+
 
 
 
@@ -95,7 +124,7 @@ ul li {
     display: flex;
     align-items: center;
     margin: 3px auto;
-   
+
 
 }
 
@@ -116,7 +145,7 @@ ul li {
 }
 
 .Planner-input-field:focus {
-outline: none;
+    outline: none;
 }
 
 .Planner-add-btn {
@@ -135,18 +164,18 @@ outline: none;
 }
 
 .timeslots {
-border: 2px solid var(--medium-gray);
-height: 500px;
-width: 400px;
-margin: 10px auto;
+    border: 1px solid var(--medium-gray);
+    height: 1360px;
+    width: 400px;
+    margin: 10px auto;
 }
 
 
 .timeslot {
-background: var(--light-purple);
-width: 150px;
-height: 50px;
-margin: 3px;
+    background: var(--light-purple);
+    width: 150px;
+    height: 10px;
+    margin: 3px;
 }
 
 
@@ -159,13 +188,22 @@ margin: 3px;
 .Planner-time {
     border: none;
     width: 80px;
-    height: 50px;
+    height: 30px;
     background: var(--light-gray);
 }
+
+.Planner-time:hover {
+    background: white;
+}
+
 
 .timeslots-row {
     display: flex;
     width: 100%;
     border: 2px solid var(--light-gray);
-    margin-top: 3px;
+    border: 1px solid var(--medium-gray);
+    height: 30px;
 }
+
+
+

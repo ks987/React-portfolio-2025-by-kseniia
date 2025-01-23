@@ -1,31 +1,36 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-import MonthRigid from './Month-rigid';
+// import navbar and footer
+import CalendarNavbar from './calendar-navbar/CalendarNavbar.js';
 import Footer from '../Footer.js';
 
-class SampleYear extends Component {
+
+// import components
+import MonthRigid from './calendar-for-one-year/Month-rigid.js';
 
 
-    render() {
+
+
+import './OneYear.css';
+
+
+export default function OneYear() {
+
         return (
             <div>
 
-                <nav className="navbar-calendar">
-                <button className="calendar-color-btn">THEME</button>
-                    <Link id="open-one-day-btn" className="calendar-link" to='/go-to-day'>Day</Link>
-                    <Link id="github-link" className="calendar-link" to='/go-to-four-days'>Four Days</Link>
-                    <Link id="fake-log-in" className="calendar-link" to='/go-to-week'>Week</Link>
-                    <Link id="calendar-app" className="calendar-link" to='/go-to-month'>Month</Link>
-                    <Link id="to-do-app" className="calendar-link" to='/go-to-year'>Year</Link>
-                </nav>
+                <CalendarNavbar/>
 
+                <br></br>
 
-                <button>go to 2024</button>
-                <div>year 2025</div>
-                <button>go to 2026</button>
+           
 
-
+               
+            <div className="OneYear-top-row">
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+                <div className="month-year-label">2025</div>
+                <button><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
 
 
                 <h3><span>TODAY is </span> Saturday January 4, 2025</h3>
@@ -60,6 +65,3 @@ class SampleYear extends Component {
             </div>
         )
     }
-}
-
-export default SampleYear;

@@ -1,29 +1,43 @@
-import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import CalendarNavbar from './calendar-navbar/CalendarNavbar.js';
+
+import './FourDays.css';
+
+export default function FourDays() {
 
 
-class FourDays extends Component {
+    const [isVisible, setIsVisible] = useState(false);
 
 
+    const toggleOverlay = () => {
+        setIsVisible(!isVisible);
 
-    render() {
-        return (
-            <div>
-                <nav className="navbar-calendar">
-                    <Link id="open-one-day-btn" className="calendar-link" to='/go-to-day'>Day</Link>
-                    <Link id="github-link" className="calendar-link" to='/go-to-four-days'>Four Days</Link>
-                    <Link id="fake-log-in" className="calendar-link" to='/go-to-week'>Week</Link>
-                    <Link id="calendar-app" className="calendar-link" to='/go-to-month'>Month</Link>
-                    <Link id="to-do-app" className="calendar-link" to='/go-to-year'>Year</Link>
-                </nav>
-
-                <div>
-                    something
-                </div>
-            </div>
-        )
     }
+
+
+    return (
+        <div className="FourDays">
+
+            <CalendarNavbar />
+            <br></br>
+
+            <div className="FourDays-top-row">
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+                <div className="month-year-label"></div>
+                <button><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+
+
+            <div className="FourDays-four-columns">
+
+            four days
+
+
+            </div>
+        </div>
+    )
 }
 
-
-export default FourDays;

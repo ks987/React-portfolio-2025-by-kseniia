@@ -2,6 +2,7 @@
   "name": "advanced-calendar-by-kseniia",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kseniiasprojects.com/portfolio/react-portfolio-2025/React-portfolio-2025-by-kseniia",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

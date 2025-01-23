@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+:root {
+
+    --bright-purple: #b852fc;
+    --purple: #b191ff;
+    --light-purple: #e8dfff;
+    --sand: #ffc65e;
+
+    --whitesmoke: #f5f5f5;
+    --white: #fff;
+    --black: #222;
+    --medium-gray: #bbb;
+    --light-gray: #eee;
+
+}
+
+
+
+
+.OneMonth-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.OneMonth-top-row button {
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    width: 100px;
+    height: 30px;
+    margin:  0px 10px;
+    color: var(--bright-purple);
+}
+
+.OneMonth-top-row button:hover {
+    transform: scale(0.97);
+    cursor: pointer;
+    
+}
+
+
