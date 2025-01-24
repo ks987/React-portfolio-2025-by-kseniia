@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import Overlay from './Overlay.js';
-
+import SampleGrid from './SampleGrid.js';
 
 // import navbar and footer
 import CalendarNavbar from './calendar-navbar/CalendarNavbar.js';
@@ -29,9 +29,23 @@ export default function OneDay() {
 
 
 
+
+    // drag and drop overlay
+
+    function dropOverlay() {
+
+    }
+
+
     return (
         <div className="OneDay">
+
+{isVisible && <Overlay />}
+            {/* one day grid of the whole page */}
+
+         
             <CalendarNavbar/>
+
             <br></br>
 
             <div className="OneDay-top-row">
@@ -44,13 +58,18 @@ export default function OneDay() {
             <div className="toolbar-calendar">
             </div>
 
-            {isVisible && <Overlay />}
+           
             <div className="Planner">
                 <br></br>
 
-                <div>Add a new task</div>
-                <input type="text" className="Planner-input-field" placeholder="type a new task"></input>
-                <button className="Planner-add-btn">Add</button>
+
+            <button className="OneDay-add-new-task-btn"
+            onClick={toggleOverlay}
+            >Add New Task</button>
+                {/* <div>Add a new task</div> */}
+
+                {/* <input type="text" className="Planner-input-field" placeholder="type a new task"></input>
+                <button className="Planner-add-btn">Add</button> */}
 
 
                 <div className="timeslots">
@@ -80,6 +99,7 @@ export default function OneDay() {
                     <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">11:00 PM</div></div>
                 </div>
             </div>
+
         </div>
     )
 }

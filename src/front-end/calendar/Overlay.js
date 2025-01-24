@@ -4,18 +4,47 @@ import './Overlay.css';
 export default function Overlay() {
 
     const [isVisible, setIsVisible] = useState(false);
+    const [isToDelete, setIsToDelete] = useState(false);
 
-    const toggleOverlay = () => {
-        setIsVisible(!isVisible);
+    const areYouSure = () => {
+      setIsToDelete(true);
     }
+
+    const showOverlay = () => {
+        setIsVisible(false);
+        setIsToDelete(false);
+    }
+
+    const hideOverlay = () => {
+        setIsVisible(true);
+        setIsToDelete(false);
+    }
+ 
+
 
     return (
         <div>
 
-            {!isVisible && <div className="Overlay">
+{/* the "discard or delete" note */}
+
+
+{isToDelete && <div className="discard-delete-note">
+    <br></br>
+    <h4>Discard unsaved note?
+    </h4>
+    <br></br>
+    <button className="Overlay-stop-btn" onClick={showOverlay}>No</button>
+    <button className="Overlay-discard-btn" onClick={hideOverlay}>Yes</button>
+
+    </div>}
+
+
+{/* the main overlay */}
+
+            {!isVisible && <div className="Overlay" draggable>
 
                 <button className="Overlay-close-btn"
-                    onClick={toggleOverlay}>X</button>
+                    onClick={areYouSure}>X</button>
                 <input type="text" className="Overlay-event-title"
                     placeholder="Add title"></input>
                 <div className="Overlay-date-row">

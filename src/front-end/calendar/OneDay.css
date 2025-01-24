@@ -39,18 +39,35 @@
     border: 1px solid var(--medium-gray);
     width: 100px;
     height: 30px;
-    margin:  0px 10px;
+    margin: 0px 10px;
     color: var(--bright-purple);
 }
 
 .OneDay-top-row button:hover {
     transform: scale(0.97);
     cursor: pointer;
-    
+
 }
 
 
+/* add new task button styles  */
 
+.OneDay-add-new-task-btn {
+    background: var(--white);
+    background: var(--purple);
+    padding: 10px 20px;
+    border: 1px solid var(--bright-purple);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    
+
+}
+
+.OneDay-add-new-task-btn:hover {
+    transform: scale(0.97);
+    cursor: pointer;
+}
 
 
 /* buttons styles */
@@ -204,6 +221,3 @@ ul li {
     border: 1px solid var(--medium-gray);
     height: 30px;
 }
-
-
-

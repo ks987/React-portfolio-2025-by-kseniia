@@ -18,17 +18,18 @@
 .Overlay {
     margin: 10px auto;
     border: 2px solid var(--purple);
-    height: 400px;
+    height: 300px;
     width: 60%;
-    max-width: 500px;
+    max-width: 400px;
     position: relative;
     background: var(--white);
     display: none;
     display: block;
     position: fixed;
     top: 100px;
-    left: 40%;
-
+    left: 20px;
+    font-size: 14px;
+    z-index: 50;
 }
 
 .Overlay:hover {
@@ -85,8 +86,7 @@ div:focus {
 
 .Overlay-months {
     border: none;
-    font-size: 17px;
-    padding: 5px;
+    padding: 1px;
 }
 
 
@@ -127,6 +127,43 @@ div:focus {
     cursor: pointer;
     transform: scale(0.97)
 }
+
+
+/* discard or delete note */
+
+.discard-delete-note {
+    width: 200px;
+    height: 150px;
+    border: 1px solid var(--black);
+    position: fixed;
+    left: 110px;
+    top: 220px;
+
+    background: white;
+    z-index: 100;
+    padding: 10px;
+}
+
+.discard-delete-note h4 {
+    margin: 0 auto;
+}
+
+.Overlay-stop-btn,
+.Overlay-discard-btn {
+    border: 1px solid var(--purple);
+    padding: 10px;
+    background: white;
+    margin: 5px;
+}
+.Overlay-stop-btn:hover,
+.Overlay-discard-btn:hover {
+    cursor: pointer;
+    background: var(--light-purple);
+    transform: scale(0.97);
+
+}
+
+
 
 
 

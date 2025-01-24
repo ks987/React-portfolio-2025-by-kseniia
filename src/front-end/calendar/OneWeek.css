@@ -54,6 +54,8 @@
 .OneWeek-table {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -78,6 +80,11 @@
     border: 1px solid var(--light-purple);
     width: 120px;
     height: 25px;
+    background: tomato;
+}
+
+.OneWeek-timeslot:hover {
+    cursor: pointer;
 }
 
 
