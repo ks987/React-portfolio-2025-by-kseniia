@@ -139,7 +139,7 @@ div:focus {
     left: 110px;
     top: 220px;
 
-    background: white;
+    background: var(--white);
     z-index: 100;
     padding: 10px;
 }
@@ -148,18 +148,32 @@ div:focus {
     margin: 0 auto;
 }
 
-.Overlay-stop-btn,
+.Overlay-stop-btn {
+    border: 1px solid var(--purple);
+    padding: 10px;
+    background: var(--white);
+    margin: 5px;
+    background: var(--light-purple);
+    color: var(--black);
+    font-weight: bold;
+}
+
 .Overlay-discard-btn {
     border: 1px solid var(--purple);
     padding: 10px;
-    background: white;
+    background: var(--white);
     margin: 5px;
+    font-weight: bold;
+
 }
+
 .Overlay-stop-btn:hover,
 .Overlay-discard-btn:hover {
     cursor: pointer;
-    background: var(--light-purple);
+    background: var(--purple);
     transform: scale(0.97);
+    color: var(--white);
+    font-weight: bold;
 
 }
 
@@ -173,4 +187,3 @@ div:focus {
         left: 20px;
     }
 }
-

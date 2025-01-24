@@ -80,7 +80,6 @@
     border: 1px solid var(--light-purple);
     width: 120px;
     height: 25px;
-    background: tomato;
 }
 
 .OneWeek-timeslot:hover {
