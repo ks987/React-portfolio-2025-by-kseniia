@@ -33,8 +33,8 @@ export default function Overlay() {
     <h4>Discard unsaved note?
     </h4>
     <br></br>
-    <button className="Overlay-stop-btn" onClick={showOverlay}>No</button>
-    <button className="Overlay-discard-btn" onClick={hideOverlay}>Yes</button>
+    <button className="Overlay-cancel-btn" onClick={showOverlay}>Cancel</button>
+    <button className="Overlay-discard-btn" onClick={hideOverlay}>Discard</button>
 
     </div>}
 

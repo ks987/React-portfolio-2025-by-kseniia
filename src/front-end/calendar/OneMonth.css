@@ -41,4 +41,36 @@
     
 }
 
+.SampleMonth-add-new-task-btn {
+    width: 120px;
+    height: 30px;
+    background: var(--bright-purple);
+    color: white;
+    border: none;
 
+
+}
+
+/* monthly calendar itself - styles */
+
+.OneMonth-monthly-calendar {
+    border: 1px solid var(--bright-purple);
+    border: none;
+    width: 300px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.OneMonth-title-slot {
+    width: 40px;
+    height: 20px;
+    border: 1px solid magenta;
+}
+
+.OneMonth-slot {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--light-purple);
+}

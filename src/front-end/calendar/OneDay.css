@@ -182,7 +182,7 @@ ul li {
 
 .timeslots {
     border: 1px solid var(--medium-gray);
-    height: 1360px;
+    height: 768px;
     width: 400px;
     margin: 10px auto;
 }
@@ -220,4 +220,11 @@ ul li {
     border: 2px solid var(--light-gray);
     border: 1px solid var(--medium-gray);
     height: 30px;
+}
+
+
+
+.OneDay-footer {
+    height: 200px;
+    width: 100%;
 }

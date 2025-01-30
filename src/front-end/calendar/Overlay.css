@@ -148,7 +148,7 @@ div:focus {
     margin: 0 auto;
 }
 
-.Overlay-stop-btn {
+.Overlay-cancel-btn {
     border: 1px solid var(--purple);
     padding: 10px;
     background: var(--white);
@@ -167,7 +167,7 @@ div:focus {
 
 }
 
-.Overlay-stop-btn:hover,
+.Overlay-cancel-btn:hover,
 .Overlay-discard-btn:hover {
     cursor: pointer;
     background: var(--purple);
