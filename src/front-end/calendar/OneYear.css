@@ -22,8 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 250px;
+    margin: 0 auto;
 }
-
 
 
 .OneYear-top-row button {
@@ -43,16 +44,68 @@
 
 
 
-
-.months-list {
-    font-size: 20px;
-    font-weight: bold;
-    color: tomato;
+.month-year-label {
+    text-align: center;
+    margin: 0 auto;
+    width: 100px;
 }
 
-
-.year-long {
+.OneYear-year-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 800px;
+    margin: 0 auto;
 }
+
+
+.OneYear-month-box {
+    margin: 5px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+   
+}
+
+.OneYear-monthly-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  
+}
+
+.OneYear-week {
+    display: flex;
+}
+
+.OneYear-week-day-name {
+    border: 1px solid var(--whitesmoke);
+    margin: 1.5px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+}
+
+.OneYear-week-day-name:hover {
+    cursor: pointer;
+    border: 1px solid yellowgreen;
+}
+
+.OneYear-day {
+    border: 1px solid var(--whitesmoke);
+    margin: 1.5px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+}
+
+.OneYear-day:hover {
+    cursor: pointer;
+    border: 1px solid yellowgreen;
+}
+

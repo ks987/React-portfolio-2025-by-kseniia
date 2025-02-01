@@ -54,7 +54,7 @@ export default function OneDay() {
     const [nextYear, setNextYear] = useState(year);
 
     // change to the previous day
-    function subtractOneDay() {
+    function oldSubtractOneDay() {
  
 
         if (nextDay <= 31 && nextMonth === 'April' || 'June' || 'September' || 'November') {
@@ -74,7 +74,7 @@ export default function OneDay() {
     }
     // change to the next day
 
-    function addOneDay() {
+    function oldAddOneDay() {
 
 
         if ((nextDay === 31) && (nextMonth === 'January' || 'March' || 'May' || 'July' || 'August' || 'October' || 'December')) {
@@ -109,6 +109,10 @@ export default function OneDay() {
 
 
 
+
+    function changeDate(offset) {
+        const date = new Date(nextYear, monthsArray.indexOf(nextMonth), nextDay);
+    }
 
 
 

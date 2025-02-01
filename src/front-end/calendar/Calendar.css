@@ -14,3 +14,16 @@
     --light-gray: #eee;
 
 }
+
+
+.Calendar-intro-note {
+    width: 100%;
+    height: 400px;
+    background: var(--whitesmoke);
+    margin-top: 50px;
+}
+
+.Calendar-intro-note h1 {
+font-size: 20px;
+}
+
