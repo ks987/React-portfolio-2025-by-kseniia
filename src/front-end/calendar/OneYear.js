@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 // import navbar and footer
@@ -5,10 +6,9 @@ import CalendarNavbar from './calendar-navbar/CalendarNavbar.js';
 import Footer from '../Footer.js';
 
 
-// import components
-import MonthRigid from './calendar-for-one-year/Month-rigid.js';
-
-
+// import js files
+import Sidebar from './Sidebar.js';
+// import css files
 
 
 import './OneYear.css';
@@ -31,33 +31,37 @@ export default function OneYear() {
 
 
     return (
-        <div>
+        <div className="OneYear">
 
             <CalendarNavbar />
+
+
 
             <br></br>
 
             <div className="OneYear-top-row">
                 <button><i class="fa-solid fa-arrow-left"></i></button>
-                <div className="month-year-label">2025</div>
+                <div className="OneYear-month-year-label">2025</div>
                 <button><i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
 
-            {/* <h3><span>TODAY is </span> Saturday January 4, 2025</h3> */}
+            <div className="OneYear-sidebar">
+                <Sidebar />
+            </div>
 
             <div className="OneYear-year-box">
-       
+
                 {monthNames.map((m) => (
                     <div className="OneYear-month-box">
                         <div className="OneYear-name-of-month-week-days">
                             <div className="OneYear-month-title">{m}</div>
 
                             <div className="OneYear-week">
-                            {weekDayNames.map((w) => (
-                                <div className="OneYear-week-day-name">{w}</div>
+                                {weekDayNames.map((w) => (
+                                    <div className="OneYear-week-day-name">{w}</div>
 
-                            ))}
+                                ))}
                             </div>
 
 

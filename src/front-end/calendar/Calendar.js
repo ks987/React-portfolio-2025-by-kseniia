@@ -7,7 +7,7 @@ import Footer from '../Footer.js';
 
 
 // import js files
-
+import OneYear from './OneYear.js';
 
 // import css files
 import './Calendar.css';
@@ -20,22 +20,7 @@ export default function Calendar() {
 
         return(
             <div>
-                <div>
-
-             
-
-                   <CalendarNavbar/>
-
-
-                   <div className="Calendar-intro-note">
-                    <h1>Welcome to the Calendar App! </h1>
-                   </div>
-   
-                    <Footer/>
-
-
-
-                </div>
+                    <OneYear/>
             </div>
         )
 };

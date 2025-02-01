@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+:root {
+
+    --bright-purple: #b852fc;
+    --purple: #b191ff;
+    --light-purple: #e8dfff;
+    --sand: #ffc65e;
+
+    --whitesmoke: #f5f5f5;
+    --white: #fff;
+    --black: #222;
+    --medium-gray: #bbb;
+    --light-gray: #eee;
+
+}
+
+
+
+.Sidebar {
+    font-size: 18px;
+    width: 250px;
+    height: 550px;
+    border: 1px solid var(--black);
+    border: none;
+    position: absolute;
+    top: 200px;
+    margin: 10px 20px;
+
+}
+
+.Sidebar-today {
+    width: 200px;
+    height: 150px;
+    border: 2px solid var(--purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.Sidebar-title {
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -95px;
+}
+
+.calendars-list-itself {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+}
+
+
+.Sidebar-row {
+    display: flex;
+}
+
+.Sidebar-color-circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: gold;
+    margin: 1px 5px;
+}

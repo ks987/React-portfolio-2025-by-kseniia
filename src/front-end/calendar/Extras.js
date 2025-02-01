@@ -46,16 +46,16 @@ export default function Extras() {
 
         if ((nextDay === 31) && (nextMonth === 'January' || 'March' || 'May' || 'July' || 'August' || 'October' || 'December')) {
             setNextDay(31)
-    
+
         } else {
             setNextDay(1);
-        } 
+        }
 
-    
-    
+
+
     };
 
- 
+
 
     function subtractOneDay() {
         const currMonthIndex = monthsArray.indexOf(nextMonth);
@@ -78,12 +78,25 @@ export default function Extras() {
 
     }
 
-    return(
+    return (
         <div>
-                          {/* monthly calendar itself */}
 
 
-                {/* <div className="OneMonth-monthly-calendar">
+            <input
+                type="color"
+                min="0"
+                max="1"
+                step="0.01"
+                value={parseFloat(color.split(",")[3])}
+                onChange={(e) => {
+                    const newAlpha = e.target.value;
+                    setColor(color.replace(/[\d\.]+\)$/, `${newAlpha})`));
+                }}></input>
+
+            {/* monthly calendar itself */}
+
+
+            {/* <div className="OneMonth-monthly-calendar">
             <div className="OneMonth-title-slot">Mon</div>
             <div className="OneMonth-title-slot">Tue</div>
             <div className="OneMonth-title-slot">Wed</div>

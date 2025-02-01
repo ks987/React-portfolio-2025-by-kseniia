@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import CalendarNavbar from './calendar-navbar/CalendarNavbar.js';
-import CalendarsList from './CalendarsList.js';
+import Sidebar from './Sidebar.js';
 
 import './FourDays.css';
 
@@ -23,7 +23,7 @@ export default function FourDays() {
 
             <CalendarNavbar />
 
-            <CalendarsList/>
+            <Sidebar/>
 
 
             <br></br>

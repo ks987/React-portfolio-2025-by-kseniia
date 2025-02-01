@@ -17,28 +17,26 @@
 
 
 
-
-
-.CalendarsList {
-    font-size: 18px;
+.PickCalendarColor {
+    border: 1px solid gray;
+    position: absolute;
+    top: 400px;
     width: 200px;
-    height: 300px;
-    border: 1px solid var(--black);
-    position: fixed;
-    margin: 10px 20px;
+    height: 150px;
+    font-size: 14px;
+
+
 }
 
-
-.CalendarsList-title {
-    font-weight: bold;
-    font-size: 22px;
+.PickCalendarColor-input {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border: none;
 }
 
-.calendars-list-itself {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    text-align: left;
+.PickCalendarColor-output {
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
 }
-
