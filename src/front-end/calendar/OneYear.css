@@ -58,7 +58,7 @@
 .OneYear-today {
     width: 200px;
     height: 200px;
-    border: 2px solid greenyellow;
+    border: 2px solid var(--bright-purple);
     margin: 10px;
     position: fixed;
 }
@@ -107,7 +107,7 @@
 
 .OneYear-week-day-name:hover {
     cursor: pointer;
-    border: 1px solid yellowgreen;
+    border: 1px solid var(--bright-purple);
 }
 
 .OneYear-day {
@@ -120,6 +120,6 @@
 
 .OneYear-day:hover {
     cursor: pointer;
-    border: 1px solid yellowgreen;
+    border: 1px solid var(--bright-purple);
 }
 

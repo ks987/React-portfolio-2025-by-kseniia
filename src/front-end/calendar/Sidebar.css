@@ -32,7 +32,7 @@
 .Sidebar-today {
     width: 200px;
     height: 150px;
-    border: 2px solid var(--purple);
+    border: 2px solid var(--bright-purple);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +47,12 @@
     margin-left: -95px;
 }
 
+.Sidebar-list {
+    margin: 0 auto;
+    width: 250px;
+    font-size: 16px;
+    text-align: center;
+}
 .calendars-list-itself {
     display: flex;
     flex-direction: column;
@@ -58,7 +64,30 @@
 
 .Sidebar-row {
     display: flex;
+    border-top: 1px solid var(--medium-gray);
+    border-left: 1px solid var(--medium-gray);
+    border-right: 1px solid var(--medium-gray);
 }
+
+.Sidebar-custom-checkbox {
+   color: var(--bright-purple);
+   margin: 4px 6px;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+
+
+.calendars-list-itself div:last-child {
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+
+.Sidebar-color-picker-box {
+width: 200px;
+margin: 0 auto;
+}
+
 
 .Sidebar-color-circle {
     border-radius: 50%;
@@ -66,4 +95,28 @@
     height: 20px;
     background: gold;
     margin: 1px 5px;
+    cursor: pointer;
 }
+
+
+/* add new calendar styles */
+
+.Sidebar-add-btn {
+    border: none;
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    background: var(--bright-purple);
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.Sidebar-add-btn:hover {
+    cursor: pointer;
+    background: var(--purple);
+    transform: scale(0.97);
+}
+
+
