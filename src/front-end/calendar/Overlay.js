@@ -6,20 +6,22 @@ export default function Overlay() {
     const [isVisible, setIsVisible] = useState(false);
     const [isToDelete, setIsToDelete] = useState(false);
 
-    const areYouSure = () => {
+    const areYouSure = (event) => {
+        event.stopPropagation();
       setIsToDelete(true);
     }
 
-    const showOverlay = () => {
+    const showOverlay = (event) => {
+        event.stopPropagation();
         setIsVisible(false);
         setIsToDelete(false);
     }
 
-    const hideOverlay = () => {
+    const hideOverlay = (event) => {
+        event.stopPropagation();
         setIsVisible(true);
         setIsToDelete(false);
     }
- 
 
 
     return (

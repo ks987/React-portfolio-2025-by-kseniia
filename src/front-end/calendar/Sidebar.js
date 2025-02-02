@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 
 import PickCalendarColor from './PickCalendarColor.js';
-import AddNewCalendar from './Add-new-calendar.js';
+import AddNewCalendar from './sidebar/Add-new-calendar.js';
+import CreatedNewCalendar from './sidebar/Created-new-calendar.js';
+
+
 import './Sidebar.css';
+
 
 export default function Sidebar() {
     const daysArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
@@ -16,8 +20,7 @@ export default function Sidebar() {
 
     const calendarNames = ['Main Calendar', 'Sample Schedule', 'Holidays', 'Travel Calendar', 'Menu Calendar'];
 
-
-    const [circleColor, setCircleColor] = useState('#ffbb11');
+    const [circleColor, setCircleColor] = useState(['tomato', 'greenyellow', 'pink', 'cornflowerblue', 'violet', 'deeppink', 'gold', 'coral', 'yellowgreen', 'lightblue']);
     const [isVisible, setIsVisible] = useState(true);
     const [checkedItems, setCheckedItems] = useState({ calendarNames }); // track checked conditions for every calendar
     const [checked, setChecked] = useState('fa-solid fa-square-check');
@@ -33,13 +36,11 @@ export default function Sidebar() {
         setCircleColor(newColor);
     }
 
-
     // show or hide the color picker
 
     function toggleColorPicker() {
         setIsVisible(!isVisible);
     }
-
 
 
     function toggleAllCheckboxes() {
@@ -58,11 +59,8 @@ export default function Sidebar() {
             } else {
                 calendarNames[index].setChecked('fa-solid fa-square-check');
             }
-
         }))
-   
     }
-
 
 
     // set custom ID to each checkbox icon
@@ -76,8 +74,9 @@ export default function Sidebar() {
 
 // display a field to add a new calendar to the list
 
-function displayAddNewCalendar() {
+function displayAddNewCalendar(event) {
     setAddNewCalendarOn(!addNewCalendarOn);
+    event.stopPropagation();
 }
 
     return (
@@ -105,7 +104,7 @@ function displayAddNewCalendar() {
                                 <i className={`${checked} Sidebar-custom-checkbox`}
                                     onClick={() => (toggleAllCheckboxes(index))}></i>
                                 {title}, {index}
-                                <div style={{ background: circleColor }} className="Sidebar-color-circle"></div>
+                                <div style={{ background: circleColor[index] }} className="Sidebar-color-circle"></div>
                             </div>
                         ))
                     }
@@ -117,9 +116,10 @@ function displayAddNewCalendar() {
                     onClick={displayAddNewCalendar}>Add new calendar</button>
 
                     {!addNewCalendarOn && <AddNewCalendar/>}
+
                 </div>
             </div>
         </div>
     )
-}
+};
 

@@ -17,7 +17,6 @@
 }
 
 
-
 .AddNewCalendar {
     border: 2px solid var(--purple);
     background: white;
@@ -68,9 +67,13 @@
     background: var(--purple);
     color: white;
     font-size: 20px;
-    width: 180px;
+    width: 100px;
     height: 60px;
     margin: 15px 10px;
+    position: relative;
+    top: -80px;
+    left: 180px;
+    border-radius: 10px;
 }
 
 .AddNewCalendar-save-btn:hover {
