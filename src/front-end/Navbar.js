@@ -1,28 +1,37 @@
 import React, { useState } from "react";
 import {Routes, Route, Link} from 'react-router-dom';
 
-// Links to apps
-
-import AboutAndContact from './about-and-contact/About-and-contact';
-import GithubLink from './github-page/GitHub-page';
-
-import Login from './sample-log-in/Sample-log-in';
-import Calendar from './calendar/Calendar';
-import ToDoApp from './to-do-app/To-do-app';
 
 
-// Links to calendar pages
+// import js files 
 
 
-import OneDay from './calendar/OneDay';
-import FourDays from './calendar/FourDays';
+// Link the apps to the navbar
 
-import OneWeek from './calendar/OneWeek';
-import OneMonth from './calendar/OneMonth';
+import AboutAndContact from './about-and-contact/About-and-contact.js';
+import GithubLink from './github-page/GitHub-page.js';
 
-import OneYear from './calendar/OneYear';
+import Login from './sample-log-in/Sample-log-in.js';
+import Calendar from './calendar/Calendar.js';
+import ToDoApp from './to-do-app/ToDoApp.js';
 
 
+// Links to the js files to the calendar navbar
+
+
+import OneDay from './calendar/OneDay.js';
+import FourDays from './calendar/FourDays.js';
+
+import OneWeek from './calendar/OneWeek.js';
+import OneMonth from './calendar/OneMonth.js';
+
+import OneYear from './calendar/OneYear.js';
+
+// Links to the to-app pages
+
+
+
+// import css files 
 
 
 import './Navbar.css';
