@@ -19,7 +19,7 @@ export default function OneYear() {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     const weekDayNames = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
     const weekDayFullNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
+    const weekDayThreeLetters = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     const today = new Date();
     const day = today.getDate(); // day of the month
@@ -42,66 +42,67 @@ export default function OneYear() {
     // start the first week of the month on the correct week day
     function determineWeekDay() {
 
-        
+        return (dayOfWeek);
+
     };
 
 
-
+    function getDaysInMonth(month, year) {
+        return new Date(year, month + 1, 0).getDate();
+    }
 
 
     return (
         <div className="OneYear">
 
-            <CalendarNavbar />
+            <div className="OneYear-Calendar-Navbar">
+                <CalendarNavbar />
+            </div>
+
 
             <br></br>
 
             <div className="OneYear-top-row">
-                <button  onClick={subtractYear}><i class="fa-solid fa-arrow-left"></i></button>
+                <button onClick={subtractYear}><i class="fa-solid fa-arrow-left"></i></button>
                 <div className="OneYear-month-year-label">{nextYear}</div>
-                <button  onClick={addYear}><i class="fa-solid fa-arrow-right"></i></button>
+                <button onClick={addYear}><i class="fa-solid fa-arrow-right"></i></button>
             </div>
+            {/* just a sample note for building weekly calendar */}
+            {/* <div className="OneYear-sample-note">{weekDayFullNames[dayOfWeek]}</div> */}
 
-            <div className="OneYear-sample-note">{weekDayFullNames[dayOfWeek]}</div>
-
+            <div className="OneYear-sidebar-and-months">
 
             <div className="OneYear-sidebar">
                 <Sidebar />
             </div>
 
-            <div className="OneYear-year-box">
+            <div className="OneYear-months">
 
-                {monthNames.map((m) => (
-                    <div className="OneYear-month-box">
+                {monthNames.map((month, monthIndex) => (
+                    <div key={monthIndex} className="OneYear-month-box">
                         <div className="OneYear-name-of-month-week-days">
-                            <div className="OneYear-month-title">{m}</div>
+                            <div className="OneYear-month-title">{month}</div>
 
                             <div className="OneYear-week">
-                                {weekDayNames.map((w) => (
-                                    <div className="OneYear-week-day-name">{w}</div>
+                                {weekDayNames.map((dayOfWeek) => (
+                                    <div key={dayOfWeek} className="OneYear-week-day-name">{dayOfWeek}</div>
 
                                 ))}
+
+                                {Array.from({ length: new Date(nextYear, monthIndex, 0).getDay() }).map((i) => (
+                                    <div key={`empty-${i}`} className="OneYear-empty-day"></div>
+                                ))}
+
+                                {Array.from({ length: getDaysInMonth(monthIndex, year) }).map((_, day) => (
+                                    <div key={day} className="OneYear-one-day">{day + 1}</div>
+                                ))}
+
                             </div>
-
-
                         </div>
-
-
-                        <div className="OneYear-monthly-boxes">
-
-                            {array.map((_, d,) => (
-
-                                <div className="OneYear-day">{array[d]}</div>
-
-
-                            ))}
-
-
-                        </div>
-
                     </div>
                 )
                 )}
+            </div>
             </div>
 
 

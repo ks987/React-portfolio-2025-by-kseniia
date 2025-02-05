@@ -18,9 +18,23 @@ export default function Sidebar() {
     const month = today.getMonth();
     const year = today.getFullYear();
 
+    const currentHours = today.getHours();
+    const currentMinutes = today.getMinutes();
+    const currentHours12 = (currentHours % 12) || 12; // convert to 0 to 12 for 12-hour format
+    const currentMinutesFormatted = currentMinutes.toString().padStart(2, '0');
+    const amPm = () => {
+        if(currentHours >= 12) {
+            return 'PM';
+        } else {
+            return 'AM';
+        }
+
+    };
+
+
     const calendarNames = ['Main Calendar', 'Sample Schedule', 'Holidays', 'Travel Calendar', 'Menu Calendar'];
 
-    const [circleColor, setCircleColor] = useState(['tomato', 'greenyellow', 'pink', 'cornflowerblue', 'violet', 'deeppink', 'gold', 'coral', 'yellowgreen', 'lightblue']);
+    const [circleColor, setCircleColor] = useState(['gold', 'coral', 'yellowgreen', 'cornflowerblue', 'violet', 'deeppink', 'tomato', 'greenyellow', 'pink', 'lightblue']);
     const [isVisible, setIsVisible] = useState(true);
     const [checkedItems, setCheckedItems] = useState({ calendarNames }); // track checked conditions for every calendar
     const [checked, setChecked] = useState('fa-solid fa-square-check');
@@ -79,6 +93,7 @@ function displayAddNewCalendar(event) {
     event.stopPropagation();
 }
 
+
     return (
         <div className="Sidebar">
 
@@ -87,6 +102,7 @@ function displayAddNewCalendar(event) {
             </div>
 
             <div className="Sidebar-today">
+                <div>It is {currentHours12}:{currentMinutesFormatted} {amPm()}</div>
                 <div>Today is {getWeekday()}, </div>
                 <div>{monthsArray[month]} {day}, {year}</div>
             </div>

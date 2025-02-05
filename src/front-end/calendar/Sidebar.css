@@ -20,14 +20,13 @@
 .Sidebar {
     font-size: 18px;
     width: 250px;
-    height: 550px;
+    height: 600px;
     border: 1px solid var(--black);
     border: none;
-    position: absolute;
-    top: 200px;
-    margin: 10px 20px;
-
+    margin: 0;
+    border: 2px solid gold;
 }
+
 
 .Sidebar-today {
     width: 200px;
@@ -53,6 +52,7 @@
     font-size: 16px;
     text-align: center;
 }
+
 .calendars-list-itself {
     display: flex;
     flex-direction: column;
@@ -70,10 +70,10 @@
 }
 
 .Sidebar-custom-checkbox {
-   color: var(--bright-purple);
-   margin: 4px 6px;
-   font-size: 20px;
-   cursor: pointer;
+    color: var(--bright-purple);
+    margin: 4px 6px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 
@@ -84,8 +84,8 @@
 
 
 .Sidebar-color-picker-box {
-width: 200px;
-margin: 0 auto;
+    width: 200px;
+    margin: 0 auto;
 }
 
 
@@ -118,5 +118,3 @@ margin: 0 auto;
     background: var(--purple);
     transform: scale(0.97);
 }
-
-

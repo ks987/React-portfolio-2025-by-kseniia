@@ -39,7 +39,9 @@ export default function OneWeek() {
     }
 
 
-
+    const timesOfDay = ['12:00 AM', '1:00 AM', '2:00 AM', '3:00 AM', '4:00 AM', '5:00 AM', '6:00 AM', '7:00 AM'];
+    const namesOfDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    const emptySlots = ['', '', '', '', '', '', ''];
 
     return (
         <div className="OneWeek">
@@ -56,7 +58,11 @@ export default function OneWeek() {
             </div>
             <br></br>
 
+
+
             <div className="OneWeek-table">
+
+
                 <div className="OneWeek-table-row OneWeek-table-row-1">
                     <div className="OneWeek-table-time"></div>
                     <div className="OneWeek-day-of-week">Monday</div>
@@ -70,34 +76,26 @@ export default function OneWeek() {
                     <div className="OneWeek-day-of-week">Sunday</div>
                 </div>
 
-                <div className="OneWeek-table-row OneWeek-table-row-2">
-                    <div className="OneWeek-table-time"><div className="OneWeek-time-note">12:00 AM</div></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
 
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
+                <div>
+                    {timesOfDay.map((time, rowIndex) => {
+                        <div key={rowIndex} className="OneWeek-table-row">
+                            <div className="OneWeek-table-time">{time}</div>
+
+                            {emptySlots.map((weekday, indexOfDay) => {
+                                <div key={indexOfDay} className="OneWeek-timeslot" onClick={toggleOverlay}>{weekday}</div>
+                            })}
+
+                        </div>
+
+
+
+                    })}
 
                 </div>
 
-                <div className="OneWeek-table-row OneWeek-table-row-3">
-                    <div className="OneWeek-table-time">1:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
 
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-4">
+                {/* <div className="OneWeek-table-row OneWeek-table-row-4">
                     <div className="OneWeek-table-time">2:00 AM </div>
                     <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
                     <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
@@ -107,301 +105,7 @@ export default function OneWeek() {
                     <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
                     <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
                     <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-5">
-                    <div className="OneWeek-table-time">3:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-6">
-                    <div className="OneWeek-table-time">4:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-7">
-                    <div className="OneWeek-table-time">5:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-8">
-                    <div className="OneWeek-table-time">6:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-9">
-                    <div className="OneWeek-table-time">7:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-10">
-                    <div className="OneWeek-table-time">8:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-11">
-                    <div className="OneWeek-table-time">9:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-12">
-                    <div className="OneWeek-table-time">10:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-13">
-                    <div className="OneWeek-table-time">11:00 AM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">12:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">1:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">2:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">3:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">4:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">5:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">6:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">7:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">8:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">9:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">10:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-                <div className="OneWeek-table-row OneWeek-table-row-14">
-                    <div className="OneWeek-table-time">11:00 PM </div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                    <div className="OneWeek-timeslot" onClick={toggleOverlay}></div>
-                </div>
-
-
-
-
+                </div> */}
 
 
 
