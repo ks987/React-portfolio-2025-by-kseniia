@@ -18,6 +18,7 @@
 .OneYear {
     width: 90%;
     border: 2px solid deeppink;
+    border: none;
     margin: 0 auto;
 }
 
@@ -29,6 +30,7 @@
     justify-content: center;
     width: 250px;
     margin: 0 auto;
+    font-weight: bold;
 }
 
 
@@ -56,6 +58,7 @@
 
 .OneYear-sidebar-and-months {
     border: 5px solid violet;
+    border: none;
     padding: 5px;
     display: flex;
     align-items: flex-start;
@@ -69,6 +72,7 @@
 /* one-year sample note styles */
 .OneYear-sample-note {
     border: 1px solid tomato;
+    border: none;
     width: 300px;
     height: 50px;
     margin: 5px auto;
@@ -99,6 +103,7 @@
     align-items: center;
     width: 800px;
     border: 2px solid yellowgreen;
+    border: none;
     height: 600px;
    
 }
@@ -166,6 +171,14 @@
 }
 
 
+
+
+
+/* mark weekends bright-purple */
+
+.OneYear-weekend {
+    color: var(--bright-purple);
+}
 
 @media screen and (max-width: 1400px) {
 

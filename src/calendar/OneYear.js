@@ -29,6 +29,7 @@ export default function OneYear() {
 
     const [yearArray, setYearArray] = useState([]);
     const [nextYear, setNextYear] = useState(year);
+    const [weekendColor, setWeekendColor] = useState('');
 
     function addYear() {
         setNextYear(nextYear + 1);
@@ -52,6 +53,13 @@ export default function OneYear() {
     }
 
 
+
+    // if it is Saturday or Sunday mark the day purple
+
+    function markWeekendsPurple() {
+        setWeekendColor('OneYear-weekend');
+    }
+
     return (
         <div className="OneYear">
 
@@ -72,37 +80,40 @@ export default function OneYear() {
 
             <div className="OneYear-sidebar-and-months">
 
-            <div className="OneYear-sidebar">
+
                 <Sidebar />
-            </div>
 
-            <div className="OneYear-months">
 
-                {monthNames.map((month, monthIndex) => (
-                    <div key={monthIndex} className="OneYear-month-box">
-                        <div className="OneYear-name-of-month-week-days">
-                            <div className="OneYear-month-title">{month}</div>
+                <div className="OneYear-months">
 
-                            <div className="OneYear-week">
-                                {weekDayNames.map((dayOfWeek) => (
-                                    <div key={dayOfWeek} className="OneYear-week-day-name">{dayOfWeek}</div>
+                    {monthNames.map((month, monthIndex) => (
+                        <div key={monthIndex} className="OneYear-month-box">
+                            <div className="OneYear-name-of-month-week-days">
+                                <div className="OneYear-month-title">{month}</div>
 
-                                ))}
+                                <div className="OneYear-week">
+                                    {weekDayNames.map((dayOfWeek) => (
+                                        <div key={dayOfWeek} className="OneYear-week-day-name">{dayOfWeek}</div>
 
-                                {Array.from({ length: new Date(nextYear, monthIndex, 0).getDay() }).map((i) => (
-                                    <div key={`empty-${i}`} className="OneYear-empty-day"></div>
-                                ))}
+                                    ))}
 
-                                {Array.from({ length: getDaysInMonth(monthIndex, year) }).map((_, day) => (
-                                    <div key={day} className="OneYear-one-day">{day + 1}</div>
-                                ))}
+                                    {Array.from({ length: new Date(nextYear, monthIndex, 0).getDay() }).map((i) => (
+                                        <div key={`empty-${i}`} className="OneYear-empty-day"></div>
+                                    ))}
 
+                                    {Array.from({ length: getDaysInMonth(monthIndex, year) }).map((_, day) => (
+                             
+                                  
+                                     ( <div key={day} className={`OneYear-one-day ${weekendColor}`}>{day + 1}</div>)
+                                  
+                                            ))}
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
-                )}
-            </div>
+                    )
+                    )}
+                </div>
             </div>
 
 
