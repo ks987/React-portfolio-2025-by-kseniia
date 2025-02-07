@@ -9,6 +9,7 @@ export default function CreateOneList() {
     const [task, setTask] = useState('');
     const [oneList, setOneList] = useState([]);
     const [showNewRow, setShowNewRow] = useState(false);
+    const [newRowIcon, setNewRowIcon] = useState('fa-solid fa-plus');
 
     function closeCreateOneList(e) {
         setHideCreateList(!hideCreateList);
@@ -23,18 +24,19 @@ export default function CreateOneList() {
         } else {
             setShowCheckboxes("fa-regular fa-square");
         }
-
     }
 
-
-
-
-    function saveTask(e) {
+    function addTask() {
         // to save the typed task and to add the field below for the new task
-        setTask(task);
+
         setShowNewRow(true);
     }
 
+    function turnIntoCheckbox() {
+ 
+            setNewRowIcon('fa-regular fa-square')
+
+    }
 
     return (
         <div>
@@ -44,8 +46,8 @@ export default function CreateOneList() {
                     <div className="CreateOneList-container">
                         <div className="CreateOneList-one-list">
                             <div className="CreateOneList-top-row">
-                            <div className="CreateOneList-label-1">Title:</div>
-                            <div contentEditable="true" className="CreateOneList-title"></div>
+                                <div className="CreateOneList-label-1">Title:</div>
+                                <div contentEditable="true" className="CreateOneList-title"></div>
                             </div>
                             <button className="CreateOneList-checkboxes-button"
                                 onClick={toggleCheckboxes}>Toggle Checkboxes</button>
@@ -58,14 +60,14 @@ export default function CreateOneList() {
                                     <div contentEditable="true"
 
                                         className="CreateOneList-task"
-                                        onChange={saveTask}>{task}</div>
+                                        onKeyDown={addTask}>{task}</div>
                                 </div>
 
-                                <div className="CreateOneList-add-new-row"
-                              > 
-                                <i className="fa-solid fa-plus"></i>
-                                <div   contentEditable="true">type new task</div>
-                                    </div>
+
+                                {showNewRow && (<div className="CreateOneList-add-new-row">
+                                    <i className={newRowIcon}></i>
+                                    <div contentEditable="true" onKeyDown={turnIntoCheckbox}></div>
+                                </div>)}
 
                             </div>
 

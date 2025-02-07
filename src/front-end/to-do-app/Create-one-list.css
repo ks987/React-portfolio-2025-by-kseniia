@@ -116,6 +116,14 @@
 
 }
 
+.CreateOneList-add-new-row div {
+    width: 260px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+}
+
 
 /* plus sign styles */
 
@@ -137,7 +145,7 @@ border: none;
     height: 30px;
     font-weight: bold;
     position: relative;
-    top: 200px;
+ 
 
 }
 
