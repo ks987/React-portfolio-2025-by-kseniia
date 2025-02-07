@@ -30,7 +30,7 @@ export default function Overlay() {
 {/* the "discard or delete" note */}
 
 
-{isToDelete && <div className="discard-delete-note">
+{isToDelete && <div className="Overlay-discard-delete-note">
     <br></br>
     <h4>Discard unsaved note?
     </h4>

@@ -22,7 +22,9 @@ export default function OneDay() {
     const [isVisible, setIsVisible] = useState(false);
     const [currDate, setCurrDate] = useState(new Date());
 
-    const toggleOverlay = () => { setIsVisible(!isVisible) };
+    function openOverlay() {
+        setIsVisible(!isVisible);
+    };
 
 
     // drag and drop overlay
@@ -36,9 +38,16 @@ export default function OneDay() {
     const month = today.getMonth();
     const year = today.getFullYear();
 
+    const timeArray = ['12:00 AM', '1:00 AM', '2:00 AM', '3:00 AM', '4:00 AM', '5:00 AM', '6:00 AM', 
+        '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', 
+        '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM', '10:00 PM', '11:00 PM'];
 
-    const daysArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-    const monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const daysArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
+        16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
+    const monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 
+        'July', 'August', 'September', 'October', 'November', 'December'];
+
     const onlyMonth = monthsArray[month - 1];
     const onlyDay = daysArray[day - 1];
     const onlyYear = year;
@@ -129,12 +138,12 @@ export default function OneDay() {
 
             <div className="OneDay-top-row">
                 <button
-                    onClick={subtractOneDay}>
+                    onClick={oldSubtractOneDay}>
                     <i className="fa-solid fa-arrow-left"></i></button>
 
                 <div className="month-year-label">{nextMonth} {nextDay}, {nextYear}</div>
                 <button
-                    onClick={addOneDay}>
+                    onClick={oldAddOneDay}>
                     <i className="fa-solid fa-arrow-right"></i></button>
             </div>
 
@@ -148,34 +157,15 @@ export default function OneDay() {
 
 
                 <button className="OneDay-add-new-task-btn"
-                    onClick={toggleOverlay}
+                    onClick={() => openOverlay()}
                 >Add New Task</button>
         
                 <div className="timeslots">
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">12:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">1:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">2:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">3:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">4:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">5:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">6:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">7:00 AM</div><TaskCode /></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">8:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">9:00 AM</div><TaskReading /></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">10:00 AM</div><TaskGroceries /></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">11:00 AM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">12:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">1:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">2:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">3:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">4:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">5:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">6:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">7:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">8:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">9:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">10:00 PM</div></div>
-                    <div className="timeslots-row" onClick={toggleOverlay}><div className="Planner-time">11:00 PM</div></div>
+
+            {timeArray.map((time) => (
+                    <div className="OneDay-timeslots-row"><div className="OneDay-time-in-schedule">{time}</div></div>
+            ))}
+
                 </div>
                 <div className="OneDay-footer"></div>
             </div>

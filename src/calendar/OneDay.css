@@ -181,45 +181,36 @@ ul li {
 }
 
 .timeslots {
-    border: 1px solid var(--medium-gray);
+    border: 1px solid var(--purple);
     height: 768px;
     width: 400px;
     margin: 10px auto;
 }
 
 
-.timeslot {
-    background: var(--light-purple);
-    width: 150px;
-    height: 10px;
-    margin: 3px;
-}
-
-
-.timeslot:hover {
-    background: var(--sand);
-    cursor: pointer;
-}
-
-
-.Planner-time {
+.OneDay-time-in-schedule {
     border: none;
     width: 80px;
     height: 30px;
-    background: var(--light-gray);
+    background: var(--light-purple);
+    border: 1px solid white;
 }
 
-.Planner-time:hover {
+.OneDay-time-in-schedule:hover {
     background: white;
 }
 
 
-.timeslots-row {
+.OneDay-timeslots-row {
     display: flex;
     width: 100%;
-    border: 2px solid var(--light-gray);
-    border: 1px solid var(--medium-gray);
+    border: 1px solid var(--light-purple);
     height: 30px;
+}
+
+.OneDay-timeslots-row:hover {
+cursor: pointer;
+
 }
 
 
