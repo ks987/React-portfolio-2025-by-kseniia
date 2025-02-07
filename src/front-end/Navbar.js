@@ -9,9 +9,9 @@ import {Routes, Route, Link} from 'react-router-dom';
 // Link the apps to the navbar
 
 import AboutAndContact from './about-and-contact/About-and-contact.js';
-import GithubLink from './github-page/GitHub-page.js';
 
-import Login from './sample-log-in/Sample-log-in.js';
+
+
 import Calendar from './calendar/Calendar.js';
 import ToDoApp from './to-do-app/ToDoApp.js';
 
@@ -45,8 +45,6 @@ export default function Navbar() {
         <div className="portfolio-title">React portfolio by Kseniia Bondarenko</div>
                 <nav className="navbar-portfolio"> 
                     <Link id="about-and-contact" className="navbar-link" to='/about-and-contact'>About</Link>
-                    <Link id="github-link" className="navbar-link" to='/github-profile'>GitHub</Link>
-                    <Link id="fake-log-in" className="navbar-link" to='/sample-log-in'>Sample Login</Link>
                     <Link id="calendar-app" className="navbar-link" to='/calendar-in-react'>Calendar App</Link>
                     <Link id="to-do-app" className="navbar-link" to='/to-do-app-in-react'>To-Do App</Link>
                 </nav>
@@ -55,8 +53,6 @@ export default function Navbar() {
 
                 <Routes>
                     <Route exact path='/about-and-contact' element={<AboutAndContact/>}></Route>
-                    <Route exact path='/github-profile' element={<GithubLink/>}></Route>
-                    <Route exact path='/sample-log-in' element={<Login/>}></Route>
                     <Route exact path='/calendar-in-react' element={<Calendar/>}></Route>
                     <Route exact path='/to-do-app-in-react' element={<ToDoApp/>}></Route>
 

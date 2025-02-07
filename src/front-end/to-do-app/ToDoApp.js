@@ -1,26 +1,46 @@
-import React, { useState} from "react";
-
+import React, { useState } from "react";
 
 // import js files
-import OneTaskList from './One-task-list.js';
+import OneList from './One-list.js';
 import Footer from '../Footer.js';
-
-
+import CreateOneList from './Create-one-list.js';
+import AllTasks from './all-tasks-file.js';
 
 // import css files
 import './ToDoApp.css';
 
-export default function ToDoApp(){
+export default function ToDoApp() {
 
-        return(
-            <div>
+const [showCreateNewTask, setShowCreateNewTask] = useState(false);
 
-                <div>something along the lines of a to do application</div>
-                <div>
-                <OneTaskList/>
-                </div>
-                <Footer/>
+function toShowCreateNew() {
+    setShowCreateNewTask((prev) => !prev);
+}
+
+    return (
+        <div className="ToDoApp">
+            <h4 className="ToDoApp-title">To-Do Application</h4>
+            <div className="ToDoApp-new-task-field">
+
+                <button className="ToDoApp-create-button" onClick={toShowCreateNew}>+ Create New Task</button>
+
             </div>
-        )
-    };
+
+            {showCreateNewTask && <CreateOneList />}
+
+
+            <div className="ToDoApp-all-lists">
+                <OneList />
+                <OneList />
+                <OneList />
+                <OneList />
+                <OneList />
+                <OneList />
+                <OneList />
+                <OneList />
+            </div>
+            <Footer />
+        </div>
+    )
+};
 

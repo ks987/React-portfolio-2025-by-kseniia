@@ -1,18 +1,60 @@
-.contact-info span {
-    color: tomato;
-    font-weight: bold;
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+:root {
+
+    --bright-purple: #b852fc;
+    --purple: #b191ff;
+    --light-purple: #e8dfff;
+    --sand: #ffc65e;
+
+    --whitesmoke: #f5f5f5;
+    --white: #fff;
+    --black: #222;
+    --medium-gray: #bbb;
+    --light-gray: #eee;
+
 }
+
+
 
 .about-me-note {
-    width: 80%;
+  width: 450px;
    margin: 0 auto;
+   border: 2px solid var(--medium-gray);
+
 }
 
-.list-of-projects li {
-    font-size: 20px;
+.about-me-note ul li {
+    font-size: 18px;
+    text-align: left;
+    list-style-type: square;
+    line-height: 1.75;
 }
 
 
 .AboutAndContact {
     background: whitesmoke;
 }
+
+.AboutAndContact-main-li {
+    font-style: italic;
+}
+
+.AboutAndContact-sub-li {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.AboutAndContact-sub-li a {
+    text-decoration: none;
+    color: var(--black);
+}
+.AboutAndContact-sub-li a:hover  {
+    text-decoration: underline;
+    
+}
+
+.AboutAndContact-main-li span {
+    font-weight: bold;
+}
+
