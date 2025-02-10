@@ -9,7 +9,7 @@ import Footer from '../Footer.js';
 
 // import other functions
 import Overlay from './Overlay.js';
-
+import FrontEndDatabase from './Front-end-database.js';
 
 
 
@@ -56,6 +56,11 @@ export default function OneWeek() {
                 <div className="month-year-label">January 20-26, 2025</div>
                 <button><i class="fa-solid fa-arrow-right"></i></button>
             </div>
+            <br></br>
+
+
+            <FrontEndDatabase/>
+
             <br></br>
 
 

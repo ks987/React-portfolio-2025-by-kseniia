@@ -119,9 +119,12 @@ export default function OneDay() {
 
 
 
-    function changeDate(offset) {
-        const date = new Date(nextYear, monthsArray.indexOf(nextMonth), nextDay);
-    }
+    // function changeDate(offset) {
+    //     const date = new Date(nextYear, monthsArray.indexOf(nextMonth), nextDay);
+    //     date.setDate(date.getDate() + offset);
+    //     setNextDay(date.getDate());
+    //     setNextDay()
+    // }
 
 
 
@@ -138,12 +141,13 @@ export default function OneDay() {
 
             <div className="OneDay-top-row">
                 <button
-                    onClick={oldSubtractOneDay}>
+              >
                     <i className="fa-solid fa-arrow-left"></i></button>
 
                 <div className="month-year-label">{nextMonth} {nextDay}, {nextYear}</div>
+        
                 <button
-                    onClick={oldAddOneDay}>
+                  >
                     <i className="fa-solid fa-arrow-right"></i></button>
             </div>
 
