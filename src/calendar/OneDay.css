@@ -204,7 +204,7 @@ ul li {
 .OneDay-timeslots-row {
     display: flex;
     width: 100%;
-    border: 1px solid var(--light-purple);
+    border: 1px solid var(--medium-gray);
     height: 30px;
 }
 
