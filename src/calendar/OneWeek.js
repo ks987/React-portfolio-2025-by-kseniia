@@ -2,16 +2,18 @@ import React, { useState } from "react";
 
 
 
-// import navbar and footer
+// import navbar and footer 
 import CalendarNavbar from './calendar-navbar/CalendarNavbar.js';
 import Footer from '../Footer.js';
 
 
-// import other functions
+// import other js files 
 import Overlay from './Overlay.js';
 import './database-sample.js';
+import Sidebar from './Sidebar.js';
 
 
+// import css files
 import './OneWeek.css';
 
 
@@ -46,6 +48,7 @@ export default function OneWeek() {
     const namesOfDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const emptySlots = ['', '', '', '', '', '', ''];
     const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const dayOfWeekShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     const [monthStart, setMonthStart] = useState('Feb');
     const [monthEnd, setMonthEnd] = useState('Feb');
@@ -69,17 +72,20 @@ export default function OneWeek() {
 
 
     function subtractOneWeek() {
-        setMonthStart('Jan');
-        setMonthEnd('Jan');
-        setDayStart('50');
-        setDayEnd('51');
-        setYearEnd('1900');
+        setMonthStart('Feb');
+        setMonthEnd('Feb');
+        setDayStart('5');
+        setDayEnd('11');
+        setYearEnd('2024');
     }
 
 
     return (
         <div className="OneWeek">
+
             {isVisible && <Overlay />}
+
+
 
             <CalendarNavbar />
 
@@ -94,41 +100,46 @@ export default function OneWeek() {
 
 
             <br></br>
+            <div className="Sidebar-and-one-week">
+                <Sidebar/>
 
-            <div className="OneWeek-table">
+                <div className="OneWeek-table">
 
 
-                <div className="OneWeek-table-row-1">
-                    <div className="OneWeek-table-time"></div>
-                    {namesOfDays.map((dayOfWeek) => (
-                        <div>
-                            <div className="OneWeek-day-of-week">{dayOfWeek}</div>
-                        </div>
+                    <div className="OneWeek-table-row-1">
+                        <div className="OneWeek-table-corner"></div>
+                        {dayOfWeekShort.map((dayOfWeek, dayIndex) => (
+                            <div className="OneWeek-day-of-week-and-date">
+                                <div className="OneWeek-day-of-week">{dayOfWeek}</div>
 
-                    ))}
+                                <div className="OneWeek-date-itself">{(parseInt(dayStart)+dayIndex)}</div>
+                            </div>
+
+                        ))}
+
+                    </div>
+
+
+                    <div className="OneWeek-all-other-rows">
+                        {timesOfDay.map((time, rowIndex) => (
+                            <div key={rowIndex} className="OneWeek-table-row">
+                                <div className="OneWeek-table-time">{time}</div>
+
+
+                                {
+                                    emptySlots.map((weekday, indexOfDay) => (
+                                        <div key={indexOfDay} className="OneWeek-timeslot" onClick={toggleOverlay}>{weekday}</div>
+                                    ))
+                                }
+
+                            </div>
+                        ))}
+
+                    </div>
+
+
 
                 </div>
-
-
-                <div className="OneWeek-all-other-rows">
-                    {timesOfDay.map((time, rowIndex) => (
-                        <div key={rowIndex} className="OneWeek-table-row">
-                            <div className="OneWeek-table-time">{time}</div>
-
-
-                            {
-                                emptySlots.map((weekday, indexOfDay) => (
-                                    <div key={indexOfDay} className="OneWeek-timeslot" onClick={toggleOverlay}>{weekday}</div>
-                                ))
-                            }
-
-                        </div>
-                    ))}
-
-                </div>
-
-
-
             </div>
 
             <br></br>

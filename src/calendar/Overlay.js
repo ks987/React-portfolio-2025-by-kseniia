@@ -5,10 +5,27 @@ export default function Overlay() {
 
     const [isVisible, setIsVisible] = useState(false);
     const [isToDelete, setIsToDelete] = useState(false);
+    const [inputValue, setInputValue] = useState('');
+    const [day, setDay] = useState('18');
+    const [year, setYear] = useState("2025");
+    const [startTime, setStartTime] = useState("10:30 AM");
+    const [endTime, setEndTime] = useState("11:30 AM");
+    const [description, setDescription] = useState("");
+
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    }
 
     const areYouSure = (event) => {
         event.stopPropagation();
-      setIsToDelete(true);
+        if (inputValue.trim() === "") {
+            // if input is empty, close right away
+            setIsVisible(true);
+        } else {
+            // else, show the confirmation
+            setIsToDelete(true);
+        }
+
     }
 
     const showOverlay = (event) => {
@@ -27,28 +44,35 @@ export default function Overlay() {
     return (
         <div>
 
-{/* the "discard or delete" note */}
+            {/* the "discard or delete" note */}
 
 
-{isToDelete && <div className="Overlay-discard-delete-note">
-    <br></br>
-    <h4>Discard unsaved note?
-    </h4>
-    <br></br>
-    <button className="Overlay-cancel-btn" onClick={showOverlay}>Cancel</button>
-    <button className="Overlay-discard-btn" onClick={hideOverlay}>Discard</button>
+            {isToDelete && <div className="Overlay-discard-delete-note">
+                <br></br>
+                <h4>Discard unsaved note?
+                </h4>
+                <br></br>
+                <button className="Overlay-cancel-btn" onClick={showOverlay}>Cancel</button>
+                <button className="Overlay-discard-btn" onClick={hideOverlay}>Discard</button>
 
-    </div>}
+            </div>}
 
 
-{/* the main overlay */}
+            {/* the main overlay */}
 
             {!isVisible && <div className="Overlay" draggable>
 
                 <button className="Overlay-close-btn"
                     onClick={areYouSure}>X</button>
-                <input type="text" className="Overlay-event-title"
-                    placeholder="Add title"></input>
+
+                <input type="text"
+                    className="Overlay-event-title"
+                    placeholder="Add title"
+                    value={inputValue}
+                    onChange={handleInputChange}>
+                    // Update state when typing
+                </input>
+
                 <div className="Overlay-date-row">
 
                     <div className="Overlay-day-of-week">Saturday,</div>
@@ -69,9 +93,9 @@ export default function Overlay() {
                         <option value="December">December</option>
 
                     </select>
-                    <div className="Overlay-day" contentEditable="true">18</div>
+                    <div className="Overlay-day">18</div>
                     <div className="Overlay-comma">, </div>
-                    <div className="Overlay-year" contentEditable="true">2025</div>
+                    <div className="Overlay-year">2025</div>
                     <div className="Overlay-at"> @ </div>
 
                     <div className="Overlay-starting-time"

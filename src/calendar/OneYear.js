@@ -75,8 +75,7 @@ export default function OneYear() {
                 <div className="OneYear-month-year-label">{nextYear}</div>
                 <button onClick={addYear}><i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            {/* just a sample note for building weekly calendar */}
-            {/* <div className="OneYear-sample-note">{weekDayFullNames[dayOfWeek]}</div> */}
+          
 
             <div className="OneYear-sidebar-and-months">
 
