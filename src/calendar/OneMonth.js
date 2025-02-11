@@ -2,11 +2,13 @@ import { useState } from "react";
 
 
 
-
+// import js files
 import CalendarNavbar from './calendar-navbar/CalendarNavbar.js';
 import Overlay from './Overlay.js';
+import Sidebar from './Sidebar.js';
+import Footer from  '../Footer.js';
 
-
+// import css files
 import './OneMonth.css';
 
 
@@ -97,9 +99,9 @@ export default function OneMonth() {
             </div>
 
 
-            <div>
-                <br></br>
-
+            <div className="OneMonth-sidebar-and-one-month">
+                <Sidebar/>
+                <div>
                 <button className="SampleMonth-add-new-task-btn"
                     onClick={toggleOverlay}>Add New Task</button>
 
@@ -108,16 +110,22 @@ export default function OneMonth() {
 
                 <div className="OneMonth-monthly-calendar">
 
-                    {daysInMonth.map((_, index) => (
+                    {daysInMonth.map((dayOfMonth, index) => (
                         <div key={index} className="OneMonth-slot">{dayOfMonth}</div>
                     ))}
 
 
                 </div>
+                </div>
 
 
 
             </div>
+
+            {/* sample overlay */}
+            <Overlay/>
+
+            <Footer/>
         </div>
     )
 }

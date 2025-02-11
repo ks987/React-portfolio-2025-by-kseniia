@@ -36,6 +36,7 @@
     cursor: pointer;
 }
 
+
 .Overlay-close-btn {
     border: 2px solid var(--purple);
     border: none;
@@ -69,10 +70,11 @@
 
 }
 
-div:focus {
+input:focus {
     outline: none;
 }
 
+/* Overlay date row */
 
 .Overlay-date-row {
     display: flex;
@@ -80,20 +82,29 @@ div:focus {
     justify-content: center;
 }
 
-.Overlay-date-row div {
-    margin: 3px;
+.Overlay-day-of-week {
+    width: 60px;
 }
 
-.Overlay-months {
-    border: none;
-    padding: 1px;
+.Overlay-month {
+    width: 60px;
 }
 
-
-.Overlay-months:focus {
-    outline: none;
+.Overlay-day {
+    width: 40px;
 }
 
+.Overlay-year {
+    width: 50px;
+}
+
+.Overlay-starting-time {
+    width: 60px;
+}
+
+.Overlay-ending-time {
+    width: 60px;
+}
 
 
 .Overlay-description {
@@ -108,6 +119,30 @@ div:focus {
 .Overlay-description:focus {
     outline: none;
 }
+
+
+
+
+/* Overlay calendar name and color */
+
+.Overlay-calendar-name-and-color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
+
+.Overlay-calendar-name-and-color div {
+    margin: 0px 3px;
+    font-size: 20px;
+}
+
+.Overlay-event-color {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
 
 .Overlay-save-event-btn {
     position: absolute;
@@ -127,6 +162,10 @@ div:focus {
     cursor: pointer;
     transform: scale(0.97)
 }
+
+
+
+
 
 
 /* discard or delete note */

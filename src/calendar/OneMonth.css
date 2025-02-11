@@ -51,6 +51,11 @@
 
 }
 
+
+.OneMonth-sidebar-and-one-month {
+    display: flex;
+}
+
 /* monthly calendar itself - styles */
 
 .OneMonth-monthly-calendar {
@@ -72,5 +77,5 @@
 .OneMonth-slot {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--light-purple);
+    border: 1px solid var(--bright-purple);
 }

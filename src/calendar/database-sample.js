@@ -59,3 +59,7 @@ const database1 = [
 
 
 ];
+
+
+
+const calendarDatabase = ['Main Calendar', 'Sample Schedule', 'Holidays', 'Travel Calendar', 'Menu Calendar'];
