@@ -133,14 +133,14 @@ export default function Sidebar() {
                     {
                         calendarNames.map((title, index) => (
                             <div key={index} className="Sidebar-row" id={`row-${index + 1}`}>
-                                
+                                 <div style={{ background: circleColor[index] }} className="Sidebar-color-circle"></div>
                                 <input type="checkbox" style={{ display: "none" }}></input>
                                
                                 <i className={`${checked} Sidebar-custom-checkbox`}
                                     onClick={() => (toggleAllCheckboxes(index))}></i>
-                                {title}, {index}
+                                {title}
                                 
-                                <div style={{ background: circleColor[index] }} className="Sidebar-color-circle"></div>
+                               
                             </div>
                         ))
                     }
