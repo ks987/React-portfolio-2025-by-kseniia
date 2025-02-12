@@ -17,8 +17,6 @@ import './OneMonth.css';
 
 export default function OneMonth() {
 
-    // toggle visiblity of overlay with assigning tasks
-    const [isVisible, setIsVisible] = useState(false);
     // toggle the pop-up showing one assigned task 
     const [oneTaskIsVisible, setOneTaskIsVisible] = useState(false);
 
@@ -53,13 +51,7 @@ export default function OneMonth() {
 
 
 
-    // toggle visiblity of overlay with assigning tasks
-
-    const toggleOverlay = () => {
-        setIsVisible(!isVisible);
-    }
-
-
+ 
 
     // add one more month to the date
     const addOneMonth = () => {
@@ -91,20 +83,20 @@ export default function OneMonth() {
 
     const determineNumberOfTasks = () => {
 
-        setNumberOfTasks(`${tasksInDatabase.length} more tasks`);
+        setNumberOfTasks(`${tasksInDatabase.length} other`);
 
 
-        if (numberOfTasks === '') {
-            setNumberOfTasks('');
-        } else if (numberOfTasks === NaN) {
-            setNumberOfTasks('');
-        } else if (numberOfTasks === 1) {
-            setNumberOfTasks(`${tasksInDatabase.length} more task`);
-        } else if (numberOfTasks === 0) {
-            setNumberOfTasks('');
-        } else {
-            setNumberOfTasks(`${tasksInDatabase.length} more tasks`);
-        }
+        // if (numberOfTasks === '') {
+        //     setNumberOfTasks('');
+        // } else if (numberOfTasks === NaN) {
+        //     setNumberOfTasks('');
+        // } else if (numberOfTasks === 1) {
+        //     setNumberOfTasks(`${tasksInDatabase.length} more task`);
+        // } else if (numberOfTasks === 0) {
+        //     setNumberOfTasks('');
+        // } else {
+        //     setNumberOfTasks(`${tasksInDatabase.length} more tasks`);
+        // }
 
 
     }
@@ -118,17 +110,17 @@ export default function OneMonth() {
 
 
     // display a pop-up with all the tasks assigned for that day
-
+    const openAllTasksPopUp = () => {
+        setOneDayTasksAreVisible(!oneDayTasksAreVisible);
+    }
 
 
     return (
         <div className="OneMonth">
             <CalendarNavbar />
 
-            {isVisible && <Overlay />}
 
-
-            {!oneDayTasksAreVisible && (<div className="OneMonth-all-tasks-popup">
+            {oneDayTasksAreVisible && (<div className="OneMonth-all-tasks-popup">
                 <div>
                     <div>read</div>
                     <div>take a nap</div>
@@ -138,8 +130,8 @@ export default function OneMonth() {
                 </div>
             </div>)}
 
-            {!oneTaskIsVisible && (<div className="OneMonth-one-task-popup">
-                    <div>6:00 am read Kindle</div>
+            {oneTaskIsVisible && (<div className="OneMonth-one-task-popup">
+                <div>6:00 am read Kindle</div>
             </div>)}
 
             <br></br>
@@ -158,8 +150,7 @@ export default function OneMonth() {
             <div className="OneMonth-sidebar-and-one-month">
                 <Sidebar />
                 <div>
-                    <button className="SampleMonth-add-new-task-btn"
-                        onClick={toggleOverlay}>Add New Task</button>
+                   
 
 
 
@@ -176,9 +167,10 @@ export default function OneMonth() {
                                         <div className="OneMonth-inserted-task"> Code</div>
                                     </div>
 
-                                    <div className="OneMonth-number-of-tasks">
+                                    <button className="OneMonth-number-of-tasks"
+                                        onClick={openAllTasksPopUp}>
                                         {numberOfTasks}
-                                    </div>
+                                    </button>
                                 </div>
 
                             </div>

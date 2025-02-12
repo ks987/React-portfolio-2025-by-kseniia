@@ -23,7 +23,7 @@ export default function Sidebar() {
     const currentHours12 = (currentHours % 12) || 12; // convert to 0 to 12 for 12-hour format
     const currentMinutesFormatted = currentMinutes.toString().padStart(2, '0');
     const amPm = () => {
-        if(currentHours >= 12) {
+        if (currentHours >= 12) {
             return 'PM';
         } else {
             return 'AM';
@@ -35,10 +35,22 @@ export default function Sidebar() {
     const calendarNames = ['Main Calendar', 'Sample Schedule', 'Holidays', 'Travel Calendar', 'Menu Calendar'];
 
     const [circleColor, setCircleColor] = useState(['gold', 'coral', 'yellowgreen', 'cornflowerblue', 'violet', 'deeppink', 'tomato', 'greenyellow', 'pink', 'lightblue']);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isPickColorVisible, setIsPickColorVisible] = useState(true);
     const [checkedItems, setCheckedItems] = useState({ calendarNames }); // track checked conditions for every calendar
     const [checked, setChecked] = useState('fa-solid fa-square-check');
     const [addNewCalendarOn, setAddNewCalendarOn] = useState(true);
+
+
+    // toggle visiblity of overlay with assigning tasks
+    const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+    // toggle visiblity of overlay with assigning tasks
+
+    const toggleOverlay = () => {
+        setIsOverlayVisible(!isOverlayVisible);
+    }
+
+
+
 
     // determine day of week
     function getWeekday() {
@@ -53,12 +65,12 @@ export default function Sidebar() {
     // show or hide the color picker
 
     function toggleColorPicker() {
-        setIsVisible(!isVisible);
+        setIsPickColorVisible(!isPickColorVisible);
     }
 
 
     function toggleAllCheckboxes() {
-        if(checked === 'fa-solid fa-square-check') {
+        if (checked === 'fa-solid fa-square-check') {
             setChecked('fa-solid fa-square');
         } else {
             setChecked('fa-solid fa-square-check');
@@ -67,7 +79,7 @@ export default function Sidebar() {
 
     function toggleOneCheckbox(index) {
 
-        setCheckedItems(checkedItems.map(() => { 
+        setCheckedItems(checkedItems.map(() => {
             if (checked === 'fa-solid fa-square-check') {
                 calendarNames[index].setChecked('fa-solid fa-square');
             } else {
@@ -86,20 +98,25 @@ export default function Sidebar() {
     // check or uncheck the custom checkbox 
 
 
-// display a field to add a new calendar to the list
+    // display a field to add a new calendar to the list
 
-function displayAddNewCalendar(event) {
-    setAddNewCalendarOn(!addNewCalendarOn);
-    event.stopPropagation();
-}
+    function displayAddNewCalendar(event) {
+        setAddNewCalendarOn(!addNewCalendarOn);
+        event.stopPropagation();
+    }
+
+
 
 
     return (
         <div className="Sidebar">
 
             <div className="Sidebar-color-picker-box">
-                {!isVisible && <PickCalendarColor onColorChange={handleColorChange} />}
+                {!isPickColorVisible && <PickCalendarColor onColorChange={handleColorChange} />}
             </div>
+
+            <button className="Sidebar-add-new-task-btn"
+                onClick={toggleOverlay}>Add New Task</button>
 
             <div className="Sidebar-today">
                 <div>It is {currentHours12}:{currentMinutesFormatted} {amPm()}</div>
@@ -109,32 +126,37 @@ function displayAddNewCalendar(event) {
 
 
 
-            <div className="Sidebar-list">
+            <div className="Sidebar-calendars-section">
                 <div className="Sidebar-title">My Calendars: </div>
                 <div className="calendars-list-itself">
 
                     {
                         calendarNames.map((title, index) => (
                             <div key={index} className="Sidebar-row" id={`row-${index + 1}`}>
+                                
                                 <input type="checkbox" style={{ display: "none" }}></input>
+                               
                                 <i className={`${checked} Sidebar-custom-checkbox`}
                                     onClick={() => (toggleAllCheckboxes(index))}></i>
                                 {title}, {index}
+                                
                                 <div style={{ background: circleColor[index] }} className="Sidebar-color-circle"></div>
                             </div>
                         ))
                     }
 
                 </div>
+            </div>
 
-                <div>
-                    <button className="Sidebar-add-btn"
+            <div>
+                <button className="Sidebar-add-calendar-btn"
                     onClick={displayAddNewCalendar}>Add new calendar</button>
 
-                    {!addNewCalendarOn && <AddNewCalendar/>}
+                {!addNewCalendarOn && <AddNewCalendar />}
 
-                </div>
+
             </div>
+
         </div>
     )
 };
