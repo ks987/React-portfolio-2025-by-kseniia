@@ -1,4 +1,4 @@
-import './Front-end-database.css';
+import './Show-data.css';
 
 
 export default function FrontEndDatabase() {
@@ -74,7 +74,7 @@ export default function FrontEndDatabase() {
 
 
     return (
-        <div className="FrontEndDatabase">
+        <div className="ShowData">
             <div>
                 Front-end database
                 <br></br>

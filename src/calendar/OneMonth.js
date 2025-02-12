@@ -51,7 +51,7 @@ export default function OneMonth() {
 
 
 
- 
+
 
     // add one more month to the date
     const addOneMonth = () => {
@@ -150,7 +150,7 @@ export default function OneMonth() {
             <div className="OneMonth-sidebar-and-one-month">
                 <Sidebar />
                 <div>
-                   
+
 
 
 
